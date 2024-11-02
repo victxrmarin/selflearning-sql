@@ -7,6 +7,8 @@ BEGIN
 	RETURN CAST(@minute AS FLOAT)/ 60.0 
 END;
 
+SELECT dbo.MinuteToHours(120) AS result;
+
 CREATE FUNCTION dbo.CalculePayment(
     @minutesWorked INT,
     @hourlyRate DECIMAL(10,2),
@@ -23,5 +25,7 @@ BEGIN
 
     RETURN @totalPayment;
 END;
+
+SELECT dbo.CalculePayment(120, 1.50, 100.00) AS result;
 
 
