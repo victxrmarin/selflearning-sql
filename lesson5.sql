@@ -17,9 +17,9 @@ BEGIN
     BEGIN TRY
         DECLARE @client_status VARCHAR(50);
         SELECT @client_status = CASE
-									WHEN status = 1 THEN 'Ativo'
-									ELSE 'Inativo'
-								END
+				  WHEN status = 1 THEN 'Ativo'
+				  ELSE 'Inativo'
+				END
 			FROM Clients 
 			WHERE id = @client_id;
 
